@@ -1,9 +1,10 @@
 const path = require('path');
 const exphbs = require('express-handlebars');
-const hbs = exphbs.create({});
+const hbs = exphbs.create({helpers});
 const routes = require('./controllers/');
 const express = require("express");
 const sequelize = require('./config/connection');
+const helpers = require('./utils/helpers');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
