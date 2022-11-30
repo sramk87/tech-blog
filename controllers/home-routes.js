@@ -34,17 +34,13 @@ router.get('/', (req, res) => {
     });
 });
 
-router.get('/homepage', (req, res) => {
+router.get('/login', (req, res) => {
     if(req.session.loggedIn) {
         res.redirect('/');
         return; 
     }
-    res.render('homepage');
-});
-
-router.get('/login', (req, res) => {
     res.render('login');
-  });
+});
 
 router.get('/post/:id', (req, res) => {
     Post.findOne({
